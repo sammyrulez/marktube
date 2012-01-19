@@ -7,6 +7,7 @@ class Bookmark(models.Model):
 	url = models.URLField()
 	date = models.DateField()
 	created_at = models.DateTimeField(auto_now=True, auto_now_add=True)
+	owner = models.ForeignKey(User)
 	
 class Channel(models.Model):
 	name = models.CharField(max_length=255)
