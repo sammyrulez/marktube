@@ -1,0 +1,20 @@
+[
+  {
+    "pk": 1, 
+    "model": "tube.userprofile", 
+    "fields": {
+      "extradata": "", 
+      "user": 2
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "tube.tpaccount", 
+    "fields": {
+      "owner": 1, 
+      "extradata": "", 
+      "service": "DIIGO",
+	  "tp_username":"sammyrulez"
+    }
+  }
+]

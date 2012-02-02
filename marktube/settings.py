@@ -40,6 +40,10 @@ LANGUAGE_CODE = 'it-it'
 
 SITE_ID = 1
 
+DIIGO_USER = "sammyrulez"
+DIIGO_PASSWORD = "rulez2000"
+DIIGO_KEY = "871375d7426d4fb1"
+
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -114,6 +118,8 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+AUTH_PROFILE_MODULE = 'tube.UserProfile'
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -128,6 +134,7 @@ INSTALLED_APPS = (
     'south', 
 	'django_coverage' ,
 	'tube',
+	'hub',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -138,11 +145,24 @@ INSTALLED_APPS = (
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+	'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler'
         }
+		,'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter': 'simple'
+        },
     },
     'loggers': {
         'django.request': {
@@ -150,5 +170,9 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+        'tube-console': {
+            'handlers': ['console',],
+            'level': 'DEBUG',
+        }
     }
 }
