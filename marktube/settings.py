@@ -40,8 +40,8 @@ LANGUAGE_CODE = 'it-it'
 
 SITE_ID = 1
 
-DIIGO_USER = "sammyrulez"
-DIIGO_PASSWORD = "rulez2000"
+DIIGO_USER = "eee"
+DIIGO_PASSWORD = "xyz"
 DIIGO_KEY = "871375d7426d4fb1"
 
 # If you set this to False, Django will make some optimizations so as not
