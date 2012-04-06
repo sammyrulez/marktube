@@ -1,4 +1,4 @@
-from marktube.tube.models import Bookmark
+from marktube.tube.models import BookmarkUrl
 from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand, CommandError
 import logging
@@ -63,7 +63,7 @@ class Command(BaseCommand):
 
 	def create_bookmarks(self,user, data,origin):
 		for d in data:
-			b = Bookmark() #TODO check if exist
+			b = BookmarkUrl() #TODO check if exist
 			b.name = d['name']
 			b.description = d['description']
 			b.url = d['url']
