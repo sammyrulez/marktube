@@ -21,7 +21,7 @@ class TPAccount(models.Model):
 		verbose_name = "Third Party Account"
 	
 
-class Bookmark(models.Model):
+class BookmarkUrl(models.Model):
 	name = models.CharField(max_length=255)
 	description = models.TextField(blank=True , null=True)
 	url = models.URLField()
@@ -34,5 +34,5 @@ class Channel(models.Model):
 	name = models.CharField(max_length=255)
 	is_private = models.BooleanField(default=False)
 	followers = models.ManyToManyField(User)
-	bookmarks =  models.ManyToManyField(Bookmark)
+	bookmarks =  models.ManyToManyField(BookmarkUrl)
 	

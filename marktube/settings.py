@@ -81,6 +81,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+   # ("admintools_bootstrap", "C:/WORK/cygwin/home/sreghenzi/marktube_prj/py_marktube/src/admintools-bootstrap/admintools_bootstrap/static/admintools_bootstrap"),
 )
 
 # List of finder classes that know how to find static files in
@@ -111,6 +112,17 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'marktube.urls'
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    # default template context processors
+    'django.core.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    # required by django-admin-tools
+    'django.core.context_processors.request',
+)
+
 TEMPLATE_DIRS = (
     os.path.join(SITE_ROOT, 'templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -128,6 +140,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
+    'admintools_bootstrap',
+    'admin_tools',
+    'admin_tools.theming',
+    'admin_tools.menu',
+    'admin_tools.dashboard',
      'django.contrib.admin', 
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
